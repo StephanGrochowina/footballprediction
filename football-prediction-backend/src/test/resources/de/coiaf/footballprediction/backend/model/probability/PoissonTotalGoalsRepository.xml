@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<dataset>
+    <!--
+    <matching_total_goals_p_threshold matching_total_goals_id="100" expected_total_goals="0.01"  probability_less_than_threshold="0.0000000000001" probability_greater_than_threshold="0.0000000000001"  odd_less_than_threshold="500.01" odd_greater_than_threshold="500.01" threshold="1.5" />
+    -->
+    <matching_total_goals_p_threshold matching_total_goals_id="1" expected_total_goals="1.00"
+            probability_less_than_threshold="0.9196986029286" probability_greater_than_threshold="0.0803013970714"
+            odd_less_than_threshold="1.09" odd_greater_than_threshold="12.45"
+            threshold="2.5" />
+    <matching_total_goals_p_threshold matching_total_goals_id="2" expected_total_goals="1.50"
+            probability_less_than_threshold="0.8088468305381" probability_greater_than_threshold="0.1911531694619"
+            odd_less_than_threshold="1.24" odd_greater_than_threshold="5.23"
+            threshold="2.5" />
+    <matching_total_goals_p_threshold matching_total_goals_id="3" expected_total_goals="2.00"
+            probability_less_than_threshold="0.6766764161831" probability_greater_than_threshold="0.3233235838169"
+            odd_less_than_threshold="1.48" odd_greater_than_threshold="3.09"
+            threshold="2.5" />
+    <matching_total_goals_p_threshold matching_total_goals_id="4" expected_total_goals="2.50"
+            probability_less_than_threshold="0.5438131158834" probability_greater_than_threshold="0.4561868841166"
+            odd_less_than_threshold="1.84" odd_greater_than_threshold="2.19"
+            threshold="2.5" />
+    <!-- single hit for odds 1.92 - 2.08 -->
+    <matching_total_goals_p_threshold matching_total_goals_id="5" expected_total_goals="2.59"
+            probability_less_than_threshold="0.5209429093545" probability_greater_than_threshold="0.4790570906455"
+            odd_less_than_threshold="1.92" odd_greater_than_threshold="2.09"
+            threshold="2.5" />
+    <!-- multiple hits for odds 2.00 - 2.00 -->
+    <matching_total_goals_p_threshold matching_total_goals_id="6" expected_total_goals="2.66"
+            probability_less_than_threshold="0.5034733104737" probability_greater_than_threshold="0.4965266895263"
+            odd_less_than_threshold="1.99" odd_greater_than_threshold="2.01"
+            threshold="2.5" />
+    <matching_total_goals_p_threshold matching_total_goals_id="7" expected_total_goals="2.68"
+            probability_less_than_threshold="0.4985364064866" probability_greater_than_threshold="0.5014635935134"
+            odd_less_than_threshold="2.01" odd_greater_than_threshold="1.99"
+            threshold="2.5" />
+</dataset>

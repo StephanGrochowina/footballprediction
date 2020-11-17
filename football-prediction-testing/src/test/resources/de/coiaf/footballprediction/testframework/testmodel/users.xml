@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<dataset>
+    <users id="${db:id('User')}" username="User1" first_name="Jeffrey" last_name="Lebowsky" />
+    <users id="${db:id('User')+1}" username="User2" first_name="Jeffrey" last_name="Lebowsky" />
+    <users id="${db:id('User')+2}" username="User3" first_name="Jeffrey" last_name="Lebowsky" />
+    <users id="${db:id('User')+3}" username="User4" first_name="Jeffrey" last_name="Lebowsky" />
+</dataset>
