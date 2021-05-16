@@ -1,0 +1,9 @@
+# Created by .ignore support plugin (hsz.mobi)
+
+# Ignore Intellij specific files
+.idea/
+*.iml
+
+# Ignore project folders
+target/
+out/
