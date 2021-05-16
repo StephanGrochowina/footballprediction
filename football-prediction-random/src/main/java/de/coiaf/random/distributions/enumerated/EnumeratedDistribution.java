@@ -43,6 +43,7 @@ public class EnumeratedDistribution<T, N extends Number> extends AbstractDistrib
     public Collection<T> determineCertainElements() {
         return this.determineCertainElements(this.certainty);
     }
+
     public Collection<T> determineCertainElements(Probability certainty) {
         Probability appliedCertainty = certainty == null ? Probability.IMPOSSIBLE : certainty;
         Collection<T> result = new ArrayList<>();
