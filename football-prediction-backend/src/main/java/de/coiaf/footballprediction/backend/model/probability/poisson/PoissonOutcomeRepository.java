@@ -1,7 +1,7 @@
 package de.coiaf.footballprediction.backend.model.probability.poisson;
 
-import de.coiaf.footballprediction.backend.model.sharedcontext.EstimatedGoals;
-import de.coiaf.footballprediction.backend.model.sharedcontext.EstimatedScore;
+import de.coiaf.footballprediction.sharedkernal.domain.model.score.EstimatedGoals;
+import de.coiaf.footballprediction.sharedkernal.domain.model.score.EstimatedScore;
 import de.coiaf.footballprediction.backend.model.sharedcontext.OddGroupOutcome;
 import de.coiaf.footballprediction.backend.persistence.ServiceQueryExecution;
 import de.coiaf.random.distributions.enumerated.EnumDistribution;

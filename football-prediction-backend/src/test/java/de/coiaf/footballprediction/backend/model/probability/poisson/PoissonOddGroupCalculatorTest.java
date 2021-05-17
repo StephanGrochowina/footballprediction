@@ -2,6 +2,8 @@ package de.coiaf.footballprediction.backend.model.probability.poisson;
 
 import de.coiaf.footballprediction.backend.model.sharedcontext.*;
 import de.coiaf.footballprediction.backend.persistence.entity.NumericSizes;
+import de.coiaf.footballprediction.sharedkernal.domain.model.score.EstimatedGoals;
+import de.coiaf.footballprediction.sharedkernal.domain.model.score.EstimatedScore;
 import de.coiaf.random.probability.Probability;
 import org.junit.After;
 import org.junit.Before;
@@ -19,7 +21,7 @@ public class PoissonOddGroupCalculatorTest {
     private static final EstimatedGoals GOALS_HOME = EstimatedGoals.valueOf(new BigDecimal("1.59"));
     private static final EstimatedGoals GOALS_AWAY = EstimatedGoals.valueOf(new BigDecimal("1.00"));
     private static final EstimatedGoals GOALS_TOTAL = GOALS_HOME.add(GOALS_AWAY);
-    private static final EstimatedScore SCORE = new EstimatedScore(GOALS_HOME, GOALS_AWAY);
+    private static final EstimatedScore SCORE = EstimatedScore.valueOf(GOALS_HOME, GOALS_AWAY);
     private static final Probability PROBABILITY_TOTAL_GOALS_BELOW_THRESHOLD = Probability.valueOf(new BigDecimal("0.5209429093545"));
     private static final Probability PROBABILITY_TOTAL_GOALS_ABOVE_THRESHOLD = Probability.valueOf(new BigDecimal("0.4790570906455"));
     private static final Probability PROBABILITY_HOME_WIN = Probability.valueOf(new BigDecimal("0.5109326216938"));

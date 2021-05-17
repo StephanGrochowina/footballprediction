@@ -1,6 +1,6 @@
 package de.coiaf.footballprediction.backend.model.probability.poisson;
 
-import de.coiaf.footballprediction.backend.model.sharedcontext.EstimatedGoals;
+import de.coiaf.footballprediction.sharedkernal.domain.model.score.EstimatedGoals;
 import de.coiaf.footballprediction.backend.model.sharedcontext.ThresholdTotalGoals;
 import de.coiaf.footballprediction.backend.persistence.entity.AbstractEntity;
 import de.coiaf.footballprediction.backend.persistence.entity.AbstractUnversionedEntity;

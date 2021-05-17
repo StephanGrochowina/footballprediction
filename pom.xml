@@ -186,5 +186,7 @@
         <module>football-prediction-random</module>
         <module>football-prediction-testing</module>
         <module>football-prediction-common</module>
+        <module>football-prediction-bc-probabilitymodel</module>
+        <module>football-prediction-sharedkernal</module>
     </modules>
 </project>

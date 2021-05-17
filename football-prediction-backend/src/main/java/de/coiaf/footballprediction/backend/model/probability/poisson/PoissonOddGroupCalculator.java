@@ -1,6 +1,8 @@
 package de.coiaf.footballprediction.backend.model.probability.poisson;
 
 import de.coiaf.footballprediction.backend.model.sharedcontext.*;
+import de.coiaf.footballprediction.sharedkernal.domain.model.score.EstimatedGoals;
+import de.coiaf.footballprediction.sharedkernal.domain.model.score.EstimatedScore;
 import de.coiaf.random.distributions.continuous.ContinuousDistribution;
 import de.coiaf.random.distributions.discrete.DiscreteDistribution;
 import de.coiaf.random.distributions.discrete.DiscreteDistributions;

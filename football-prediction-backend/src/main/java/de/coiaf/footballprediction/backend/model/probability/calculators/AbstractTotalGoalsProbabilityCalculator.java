@@ -1,7 +1,7 @@
 package de.coiaf.footballprediction.backend.model.probability.calculators;
 
-import de.coiaf.footballprediction.backend.model.sharedcontext.EstimatedGoals;
-import de.coiaf.footballprediction.backend.model.sharedcontext.EstimatedScore;
+import de.coiaf.footballprediction.sharedkernal.domain.model.score.EstimatedGoals;
+import de.coiaf.footballprediction.sharedkernal.domain.model.score.EstimatedScore;
 import de.coiaf.random.probability.Probability;
 
 import javax.inject.Inject;

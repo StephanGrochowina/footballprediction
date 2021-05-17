@@ -1,19 +1,25 @@
-package de.coiaf.footballprediction.backend.model.sharedcontext;
+package de.coiaf.footballprediction.sharedkernal.domain.model.score;
+
+import de.coiaf.footballprediction.sharedkernal.domain.model.buildingblocks.ValueObject;
 
 import java.io.Serializable;
 import java.util.Objects;
 
-public class EstimatedScore implements Serializable {
+public class EstimatedScore implements ValueObject<EstimatedScore>, Serializable {
 
     private final EstimatedGoals homeGoals;
     private final EstimatedGoals awayGoals;
     private final EstimatedGoals totalGoals;
 
-    public EstimatedScore(Double homeGoals, Double awayGoals) {
-        this(EstimatedGoals.valueOf(homeGoals, true), EstimatedGoals.valueOf(awayGoals, true));
+    public static EstimatedScore valueOf(Double homeGoals, Double awayGoals) {
+        return new EstimatedScore(EstimatedGoals.valueOf(homeGoals, true), EstimatedGoals.valueOf(awayGoals, true));
     }
 
-    public EstimatedScore(EstimatedGoals homeGoals, EstimatedGoals awayGoals) {
+    public static EstimatedScore valueOf(EstimatedGoals homeGoals, EstimatedGoals awayGoals) {
+        return new EstimatedScore(homeGoals, awayGoals);
+    }
+
+    private EstimatedScore(EstimatedGoals homeGoals, EstimatedGoals awayGoals) {
         Objects.requireNonNull(homeGoals, "Parameter homeGoals must not be null.");
         Objects.requireNonNull(awayGoals, "Parameter awayGoals must not be null.");
 

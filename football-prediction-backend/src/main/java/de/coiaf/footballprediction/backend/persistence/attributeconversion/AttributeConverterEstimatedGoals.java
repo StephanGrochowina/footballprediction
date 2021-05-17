@@ -1,6 +1,6 @@
 package de.coiaf.footballprediction.backend.persistence.attributeconversion;
 
-import de.coiaf.footballprediction.backend.model.sharedcontext.EstimatedGoals;
+import de.coiaf.footballprediction.sharedkernal.domain.model.score.EstimatedGoals;
 
 import javax.persistence.AttributeConverter;
 import javax.persistence.Converter;
