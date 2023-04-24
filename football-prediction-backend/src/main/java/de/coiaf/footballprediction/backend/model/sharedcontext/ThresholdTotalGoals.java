@@ -7,6 +7,7 @@ import java.math.MathContext;
 import java.math.RoundingMode;
 import java.util.function.Supplier;
 
+@Deprecated
 public class ThresholdTotalGoals extends AbstractBigDecimalBasedValueObject<ThresholdTotalGoals> {
 
     private static final int THRESHOLD_SCALE = 0;

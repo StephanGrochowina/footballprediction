@@ -1,4 +1,4 @@
-package de.coiaf.footballprediction.sharedkernal.domain.model.score;
+package de.coiaf.footballprediction.sharedkernal.domain.model.prediction;
 
 import de.coiaf.footballprediction.sharedkernal.domain.model.buildingblocks.ValueObject;
 
@@ -17,6 +17,10 @@ public class EstimatedScore implements ValueObject<EstimatedScore>, Serializable
 
     public static EstimatedScore valueOf(EstimatedGoals homeGoals, EstimatedGoals awayGoals) {
         return new EstimatedScore(homeGoals, awayGoals);
+    }
+
+    public EstimatedScore(Double homeGoals, Double awayGoals) {
+        this(EstimatedGoals.valueOf(homeGoals, true), EstimatedGoals.valueOf(awayGoals, true));
     }
 
     private EstimatedScore(EstimatedGoals homeGoals, EstimatedGoals awayGoals) {

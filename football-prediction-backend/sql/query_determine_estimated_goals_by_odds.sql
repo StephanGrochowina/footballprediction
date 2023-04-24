@@ -12,7 +12,7 @@ order by
 limit 1
 ;
 
--- Determine estimated score by odd group and threshold
+-- Determine estimated prediction by odd group and threshold
 SELECT
   round(min(goals_home), 2) as minimumHomeGoals,
   avg(goals_home) as averageUnroundedHomeGoals,

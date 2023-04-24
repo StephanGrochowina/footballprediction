@@ -1,6 +1,6 @@
 package de.coiaf.footballprediction.backend.model.probability.poisson;
 
-import de.coiaf.footballprediction.sharedkernal.domain.model.score.EstimatedGoals;
+import de.coiaf.footballprediction.sharedkernal.domain.model.prediction.EstimatedGoals;
 import de.coiaf.footballprediction.backend.persistence.entity.AbstractEntity;
 import de.coiaf.footballprediction.backend.persistence.entity.AbstractUnversionedEntity;
 import de.coiaf.footballprediction.backend.persistence.entity.NumericSizes;
@@ -17,7 +17,7 @@ import javax.validation.constraints.NotNull;
                         + "WHERE m.expectedHomeGoals = :expectedHomeGoals "
                         + "and m.expectedAwayGoals = :expectedAwayGoals "),
         @NamedQuery(name = OutcomeOddGroupMapping.QUERY_LOAD_SCORE_FOR_ODD_GROUP,
-                query = "SELECT new de.coiaf.footballprediction.backend.model.sharedcontext.EstimatedScore("
+                query = "SELECT new de.coiaf.footballprediction.sharedkernal.domain.model.prediction.EstimatedScore("
                         + "avg(m.expectedHomeGoals), avg(m.expectedAwayGoals) "
                         + ") from OutcomeOddGroupMapping m "
                         + "WHERE "
@@ -36,7 +36,7 @@ import javax.validation.constraints.NotNull;
                         + ") "
         ),
         @NamedQuery(name = OutcomeOddGroupMapping.QUERY_LOAD_SCORE_FOR_ODD_GROUP_AND_TOTAL_GOALS,
-                query = "SELECT new de.coiaf.footballprediction.backend.model.sharedcontext.EstimatedScore("
+                query = "SELECT new de.coiaf.footballprediction.sharedkernal.domain.model.prediction.EstimatedScore("
                         + "avg(m.expectedHomeGoals), avg(m.expectedAwayGoals) "
                         + ") from OutcomeOddGroupMapping m "
                         + "WHERE m.expectedTotalGoals = :expectedTotalGoals "

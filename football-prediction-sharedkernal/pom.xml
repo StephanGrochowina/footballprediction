@@ -16,7 +16,7 @@
     <dependencies>
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>football-prediction-common</artifactId>
+            <artifactId>football-prediction-random</artifactId>
             <version>${project.version}</version>
         </dependency>
 

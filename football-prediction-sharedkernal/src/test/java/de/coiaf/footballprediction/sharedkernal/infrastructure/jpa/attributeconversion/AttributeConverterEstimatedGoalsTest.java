@@ -1,6 +1,6 @@
-package de.coiaf.footballprediction.backend.persistence.attributeconversion;
+package de.coiaf.footballprediction.sharedkernal.infrastructure.jpa.attributeconversion;
 
-import de.coiaf.footballprediction.sharedkernal.domain.model.score.EstimatedGoals;
+import de.coiaf.footballprediction.sharedkernal.domain.model.prediction.EstimatedGoals;
 import org.junit.Test;
 
 import java.math.BigDecimal;

@@ -1,4 +1,4 @@
-package de.coiaf.footballprediction.sharedkernal.domain.model.score;
+package de.coiaf.footballprediction.sharedkernal.domain.model.prediction;
 
 import org.junit.Test;
 

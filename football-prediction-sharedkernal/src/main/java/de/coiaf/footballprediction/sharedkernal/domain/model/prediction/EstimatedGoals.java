@@ -1,4 +1,4 @@
-package de.coiaf.footballprediction.sharedkernal.domain.model.score;
+package de.coiaf.footballprediction.sharedkernal.domain.model.prediction;
 
 import de.coiaf.footballprediction.common.vo.numerical.AbstractBigDecimalBasedValueObject;
 import de.coiaf.footballprediction.sharedkernal.domain.model.buildingblocks.ValueObject;

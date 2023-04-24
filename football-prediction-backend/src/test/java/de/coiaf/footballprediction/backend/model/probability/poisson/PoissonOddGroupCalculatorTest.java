@@ -2,8 +2,8 @@ package de.coiaf.footballprediction.backend.model.probability.poisson;
 
 import de.coiaf.footballprediction.backend.model.sharedcontext.*;
 import de.coiaf.footballprediction.backend.persistence.entity.NumericSizes;
-import de.coiaf.footballprediction.sharedkernal.domain.model.score.EstimatedGoals;
-import de.coiaf.footballprediction.sharedkernal.domain.model.score.EstimatedScore;
+import de.coiaf.footballprediction.sharedkernal.domain.model.prediction.EstimatedGoals;
+import de.coiaf.footballprediction.sharedkernal.domain.model.prediction.EstimatedScore;
 import de.coiaf.random.probability.Probability;
 import org.junit.After;
 import org.junit.Before;

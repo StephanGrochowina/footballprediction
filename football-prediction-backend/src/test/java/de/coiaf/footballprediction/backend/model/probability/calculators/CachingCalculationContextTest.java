@@ -1,6 +1,6 @@
 package de.coiaf.footballprediction.backend.model.probability.calculators;
 
-import de.coiaf.footballprediction.sharedkernal.domain.model.score.EstimatedGoals;
+import de.coiaf.footballprediction.sharedkernal.domain.model.prediction.EstimatedGoals;
 import de.coiaf.random.distributions.discrete.DiscreteDistribution;
 import de.coiaf.random.distributions.discrete.DiscreteDistributions;
 import de.coiaf.random.probability.Probability;
