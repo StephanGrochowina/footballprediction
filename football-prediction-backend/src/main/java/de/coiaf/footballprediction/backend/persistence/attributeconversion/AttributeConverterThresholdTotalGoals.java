@@ -6,6 +6,7 @@ import javax.persistence.AttributeConverter;
 import javax.persistence.Converter;
 import java.math.BigDecimal;
 
+@Deprecated
 @Converter(autoApply = true)
 public class AttributeConverterThresholdTotalGoals implements AttributeConverter<ThresholdTotalGoals, BigDecimal> {
 

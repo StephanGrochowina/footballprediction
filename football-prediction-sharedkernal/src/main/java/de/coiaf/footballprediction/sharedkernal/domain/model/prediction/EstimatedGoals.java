@@ -1,6 +1,7 @@
-package de.coiaf.footballprediction.backend.model.sharedcontext;
+package de.coiaf.footballprediction.sharedkernal.domain.model.prediction;
 
 import de.coiaf.footballprediction.common.vo.numerical.AbstractBigDecimalBasedValueObject;
+import de.coiaf.footballprediction.sharedkernal.domain.model.buildingblocks.ValueObject;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
@@ -9,7 +10,7 @@ import java.util.Optional;
 import java.util.function.Function;
 import java.util.stream.Stream;
 
-public class EstimatedGoals extends AbstractBigDecimalBasedValueObject<EstimatedGoals> {
+public class EstimatedGoals extends AbstractBigDecimalBasedValueObject<EstimatedGoals> implements ValueObject<EstimatedGoals> {
 
     private static final int ESTIMATED_GOALS_SCALE = 2;
     private static final BigDecimal MIN_VALUE_ALLOWED = BigDecimal.valueOf(Double.MIN_VALUE);

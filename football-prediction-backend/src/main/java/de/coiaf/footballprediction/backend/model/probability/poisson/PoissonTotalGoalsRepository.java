@@ -1,7 +1,7 @@
 package de.coiaf.footballprediction.backend.model.probability.poisson;
 
-import de.coiaf.footballprediction.backend.model.sharedcontext.EstimatedGoals;
-import de.coiaf.footballprediction.backend.model.sharedcontext.EstimatedScore;
+import de.coiaf.footballprediction.sharedkernal.domain.model.prediction.EstimatedGoals;
+import de.coiaf.footballprediction.sharedkernal.domain.model.prediction.EstimatedScore;
 import de.coiaf.footballprediction.backend.model.sharedcontext.OddGroupTotalGoals;
 import de.coiaf.footballprediction.backend.model.sharedcontext.ThresholdTotalGoals;
 import de.coiaf.footballprediction.backend.persistence.ServiceQueryExecution;
@@ -17,23 +17,23 @@ public class PoissonTotalGoalsRepository {
     private ServiceQueryExecution queryExecutor;
 
     /**
-     * Finds a {@link OddGroupTotalGoals} instance for the estimated score {@code score} and the
+     * Finds a {@link OddGroupTotalGoals} instance for the estimated prediction {@code prediction} and the
      * default threshold {@link ThresholdTotalGoals#getDefaultInstance()}.
-     * @param score the estimated score
+     * @param score the estimated prediction
      * @return an {@link OddGroupTotalGoals} instance
-     * @throws NullPointerException if {@code score} is null
+     * @throws NullPointerException if {@code prediction} is null
      */
     public OddGroupTotalGoals findOddGroup(EstimatedScore score) {
         return this.findOddGroup(score.getTotalGoals());
     }
 
     /**
-     * Finds a {@link OddGroupTotalGoals} instance for the estimated score {@code score} and the threshold
+     * Finds a {@link OddGroupTotalGoals} instance for the estimated prediction {@code prediction} and the threshold
      * {@code threshold}.
-     * @param score the estimated score
+     * @param score the estimated prediction
      * @param threshold the threshold for over/under probabilities
      * @return an {@link OddGroupTotalGoals} instance
-     * @throws NullPointerException if {@code score} or {@code threshold} is null
+     * @throws NullPointerException if {@code prediction} or {@code threshold} is null
      */
     public OddGroupTotalGoals findOddGroup(EstimatedScore score, ThresholdTotalGoals threshold) {
         return this.findOddGroup(score.getTotalGoals(), threshold);

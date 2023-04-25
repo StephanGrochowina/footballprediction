@@ -1,7 +1,7 @@
 package de.coiaf.footballprediction.backend.model.probability.poisson;
 
-import de.coiaf.footballprediction.backend.model.sharedcontext.EstimatedGoals;
-import de.coiaf.footballprediction.backend.model.sharedcontext.EstimatedScore;
+import de.coiaf.footballprediction.sharedkernal.domain.model.prediction.EstimatedGoals;
+import de.coiaf.footballprediction.sharedkernal.domain.model.prediction.EstimatedScore;
 import de.coiaf.footballprediction.backend.model.sharedcontext.OddGroupOutcome;
 import de.coiaf.footballprediction.backend.persistence.ServiceQueryExecution;
 import de.coiaf.random.distributions.enumerated.EnumDistribution;
@@ -22,10 +22,10 @@ public class PoissonOutcomeRepository {
     private ServiceQueryExecution queryExecutor;
 
     /**
-     * Finds a {@link EnumDistribution} instance for the estimated score {@code score}.
-     * @param score the estimated score
+     * Finds a {@link EnumDistribution} instance for the estimated prediction {@code prediction}.
+     * @param score the estimated prediction
      * @return an {@link EnumDistribution} instance
-     * @throws NullPointerException if {@code score} is null
+     * @throws NullPointerException if {@code prediction} is null
      */
     public EnumDistribution<Outcomes, Probability> findDistribution(EstimatedScore score) {
         OddGroupOutcome oddGroup = this.findOddGroup(score);
@@ -34,13 +34,13 @@ public class PoissonOutcomeRepository {
     }
 
     /**
-     * Finds a {@link OddGroupOutcome} instance for the estimated score {@code score}.
-     * @param score the estimated score
+     * Finds a {@link OddGroupOutcome} instance for the estimated prediction {@code prediction}.
+     * @param score the estimated prediction
      * @return an {@link OddGroupOutcome} instance
-     * @throws NullPointerException if {@code score} is null
+     * @throws NullPointerException if {@code prediction} is null
      */
     public OddGroupOutcome findOddGroup(EstimatedScore score) {
-        Objects.requireNonNull(score, "Parameter score must not be null.");
+        Objects.requireNonNull(score, "Parameter prediction must not be null.");
 
         @SuppressWarnings("UnnecessaryLocalVariable")
         OddGroupOutcome result = this.queryExecutor.loadSingleResultByNamedQuery(
@@ -54,17 +54,17 @@ public class PoissonOutcomeRepository {
     }
 
     /**
-     * Persists the {@code oddGroup} for a given score {@code score}.
-     * @param score the estimated score
+     * Persists the {@code oddGroup} for a given prediction {@code prediction}.
+     * @param score the estimated prediction
      * @param oddGroup the odd group providing odds and probabilities for the outcome
-     * @throws NullPointerException if {@code score} or {@code oddGroup} is null
-     * @throws PersistenceException if an entity with the score {@code score} already exists
+     * @throws NullPointerException if {@code prediction} or {@code oddGroup} is null
+     * @throws PersistenceException if an entity with the prediction {@code prediction} already exists
      * @throws TransactionRequiredException if there is no transaction when
      *         invoked on a container-managed entity manager of that is of type
      *         <code>PersistenceContextType.TRANSACTION</code>
      */
     public void persist(EstimatedScore score, OddGroupOutcome oddGroup) {
-        Objects.requireNonNull(score, "Parameter score must not be null.");
+        Objects.requireNonNull(score, "Parameter prediction must not be null.");
         Objects.requireNonNull(oddGroup, "Parameter oddGroup must not be null.");
 
         OutcomeOddGroupMapping entity = new OutcomeOddGroupMapping();

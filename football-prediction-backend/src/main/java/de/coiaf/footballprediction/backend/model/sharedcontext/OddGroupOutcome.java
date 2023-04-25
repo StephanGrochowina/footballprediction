@@ -59,6 +59,16 @@ public class OddGroupOutcome {
         return new OddGroupOutcome(oddHomeWin, oddDraw, oddAwayWin);
     }
 
+    public OddGroupOutcome(Probability probabilityHomeWin, Probability probabilityDraw, Probability probabilityAwayWin) {
+        Objects.requireNonNull(probabilityHomeWin, "Parameter probabilityHomeWin must not be null.");
+        Objects.requireNonNull(probabilityDraw, "Parameter probabilityDraw must not be null.");
+        Objects.requireNonNull(probabilityAwayWin, "Parameter probabilityAwayWin must not be null.");
+
+        this.oddHomeWin = DecimalOdd.from(probabilityHomeWin);
+        this.oddDraw = DecimalOdd.from(probabilityDraw);
+        this.oddAwayWin = DecimalOdd.from(probabilityAwayWin);
+    }
+
     private OddGroupOutcome(DecimalOdd oddHomeWin, DecimalOdd oddDraw, DecimalOdd oddAwayWin) {
         Objects.requireNonNull(oddHomeWin, "Parameter oddHomeWin must not be null.");
         Objects.requireNonNull(oddDraw, "Parameter oddDraw must not be null.");

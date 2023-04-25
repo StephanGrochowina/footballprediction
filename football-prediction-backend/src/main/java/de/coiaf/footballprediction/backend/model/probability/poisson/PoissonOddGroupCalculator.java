@@ -1,6 +1,8 @@
 package de.coiaf.footballprediction.backend.model.probability.poisson;
 
 import de.coiaf.footballprediction.backend.model.sharedcontext.*;
+import de.coiaf.footballprediction.sharedkernal.domain.model.prediction.EstimatedGoals;
+import de.coiaf.footballprediction.sharedkernal.domain.model.prediction.EstimatedScore;
 import de.coiaf.random.distributions.continuous.ContinuousDistribution;
 import de.coiaf.random.distributions.discrete.DiscreteDistribution;
 import de.coiaf.random.distributions.discrete.DiscreteDistributions;
@@ -14,25 +16,25 @@ import java.util.Objects;
 public class PoissonOddGroupCalculator {
 
     /**
-     * Creates an {@link OddGroupTotalGoals} instance for over/under bets depending on the {@code score}
+     * Creates an {@link OddGroupTotalGoals} instance for over/under bets depending on the {@code prediction}
      * to be expected in a match and the default threshold {@link ThresholdTotalGoals#getDefaultInstance()}
      * defining what number of goals are considered to be part of the under and the over bet.
-     * @param score the estimated score
+     * @param score the estimated prediction
      * @return an {@link OddGroupTotalGoals} instance
-     * @throws NullPointerException if {@code score} is null
+     * @throws NullPointerException if {@code prediction} is null
      */
     public OddGroupTotalGoals createTotalGoalsOdds(EstimatedScore score) {
         return this.createTotalGoalsOdds(score.getTotalGoals());
     }
 
     /**
-     * Creates an {@link OddGroupTotalGoals} instance for over/under bets depending on the {@code score}
+     * Creates an {@link OddGroupTotalGoals} instance for over/under bets depending on the {@code prediction}
      * to be expected in a match and the {@code threshold} defining what number of goals are considered to be
      * part of the under and the over bet.
-     * @param score the estimated score
+     * @param score the estimated prediction
      * @param threshold the threshold for over/under probabilities
      * @return an {@link OddGroupTotalGoals} instance
-     * @throws NullPointerException if {@code score} or {@code threshold} is null
+     * @throws NullPointerException if {@code prediction} or {@code threshold} is null
      */
     public OddGroupTotalGoals createTotalGoalsOdds(EstimatedScore score, ThresholdTotalGoals threshold) {
         return this.createTotalGoalsOdds(score.getTotalGoals(), threshold);
@@ -72,13 +74,13 @@ public class PoissonOddGroupCalculator {
     }
 
     /**
-     * Creates an {@link OddGroupOutcome} instance for outcome bets depending on the {@code score}.
-     * @param score the estimated score
+     * Creates an {@link OddGroupOutcome} instance for outcome bets depending on the {@code prediction}.
+     * @param score the estimated prediction
      * @return an {@link OddGroupOutcome} instance
-     * @throws NullPointerException if {@code score} is null
+     * @throws NullPointerException if {@code prediction} is null
      */
     public OddGroupOutcome createOutcomeOdds(EstimatedScore score) {
-        Objects.requireNonNull(score, "Parameter score must not be null.");
+        Objects.requireNonNull(score, "Parameter prediction must not be null.");
 
         EnumDistribution<Outcomes, Probability> distribution = this.createOutcomeDistribution(score);
         Probability probabilityHomeWin = distribution.getDensity(Outcomes.HOME_WIN);
