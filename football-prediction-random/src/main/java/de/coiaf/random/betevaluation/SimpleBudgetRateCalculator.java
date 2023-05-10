@@ -5,13 +5,13 @@ import de.coiaf.random.probability.Probability;
 
 import java.math.BigDecimal;
 
-public class SimpleBudgetRateCalculator extends AbstractBudgetRateCalculatorRespectingBetValue {
+class SimpleBudgetRateCalculator extends AbstractBudgetRateCalculatorRespectingBetValue {
 
-    public SimpleBudgetRateCalculator() {
+    SimpleBudgetRateCalculator() {
         super();
     }
 
-    public SimpleBudgetRateCalculator(BigDecimal valueThreshold) {
+    SimpleBudgetRateCalculator(BigDecimal valueThreshold) {
         super(valueThreshold);
     }
 

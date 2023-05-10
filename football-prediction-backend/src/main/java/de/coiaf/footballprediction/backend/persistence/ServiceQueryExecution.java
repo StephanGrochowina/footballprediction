@@ -1,7 +1,5 @@
 package de.coiaf.footballprediction.backend.persistence;
 
-import de.coiaf.footballprediction.backend.BackendConstants;
-
 import javax.persistence.*;
 import java.util.*;
 import java.util.function.BiFunction;
@@ -14,8 +12,18 @@ public class ServiceQueryExecution {
 
     private static final int DEFAULT_ENTRIES_PER_PAGE = 100;
 
-    @PersistenceContext(unitName = BackendConstants.PERSISTENCE_CONTEXT_UNIT_NAME)
-    private EntityManager entityManager;
+    private final EntityManager entityManager;
+
+    /**
+     * Creates an instance of {@link ServiceQueryExecution}
+     * @param entityManager the entity manager to be used
+     * @throws NullPointerException if {@param entityManager} is null
+     */
+    public ServiceQueryExecution(EntityManager entityManager) {
+        Objects.requireNonNull(entityManager);
+
+        this.entityManager = entityManager;
+    }
 
     /**
      * Updates or persists {@code entity} depending on the flag {@code update}.
@@ -330,9 +338,5 @@ public class ServiceQueryExecution {
         if (entriesPerPage < 1) {
             throw new IllegalArgumentException(("The parameter entriesPerPage must be greater than 0."));
         }
-    }
-
-    void setEntityManager(EntityManager entityManager) {
-        this.entityManager = entityManager;
     }
 }

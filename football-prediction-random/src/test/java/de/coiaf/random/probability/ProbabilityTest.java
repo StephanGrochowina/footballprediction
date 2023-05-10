@@ -1,6 +1,5 @@
 package de.coiaf.random.probability;
 
-import de.coiaf.random.probability.Probability;
 import org.junit.Test;
 
 import static org.junit.Assert.*;

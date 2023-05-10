@@ -1,5 +1,6 @@
 package de.coiaf.footballprediction.backend.model.probability.poisson;
 
+import de.coiaf.footballprediction.backend.model.probability.PredictionsServiceQueryExecution;
 import de.coiaf.footballprediction.backend.model.sharedcontext.EstimatedGoals;
 import de.coiaf.footballprediction.backend.model.sharedcontext.EstimatedScore;
 import de.coiaf.footballprediction.backend.model.sharedcontext.OddGroupTotalGoals;
@@ -14,6 +15,7 @@ import java.util.Objects;
 public class PoissonTotalGoalsRepository {
 
     @Inject
+    @PredictionsServiceQueryExecution
     private ServiceQueryExecution queryExecutor;
 
     /**

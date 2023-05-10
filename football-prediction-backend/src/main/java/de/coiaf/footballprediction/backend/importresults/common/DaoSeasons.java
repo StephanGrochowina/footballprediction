@@ -16,6 +16,7 @@ public class DaoSeasons {
             "select s from Season s inner join s.division d where d.id = :divisionId and s.description = :seasonDescription";
 
     @Inject
+    @ResultImportsServiceQueryExecution
     private ServiceQueryExecution queryExecutor;
 
     public ContextSeasonImport createContext(Division division, String seasonDescription) {
