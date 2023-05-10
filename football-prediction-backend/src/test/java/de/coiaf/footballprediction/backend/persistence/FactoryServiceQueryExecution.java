@@ -11,9 +11,7 @@ public class FactoryServiceQueryExecution {
         return spy(createInstance(entityManager));
     }
     public static ServiceQueryExecution createInstance(EntityManager entityManager) {
-        ServiceQueryExecution instance = new ServiceQueryExecution();
-
-        instance.setEntityManager(entityManager);
+        ServiceQueryExecution instance = new ServiceQueryExecution(entityManager);
 
         return instance;
     }

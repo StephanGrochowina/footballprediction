@@ -12,6 +12,7 @@ public class DaoDivisions {
             + "(d) from Division d order by d.countryName, d.divisionLevel, d.divisionName";
 
     @Inject
+    @ResultImportsServiceQueryExecution
     private ServiceQueryExecution queryExecutor;
 
     public List<DivisionDisplayable> loadAllDivisions() {

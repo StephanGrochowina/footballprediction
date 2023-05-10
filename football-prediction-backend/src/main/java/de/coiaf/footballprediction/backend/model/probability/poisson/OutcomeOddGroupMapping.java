@@ -12,7 +12,7 @@ import javax.validation.constraints.NotNull;
 @NamedQueries({
         @NamedQuery(name = OutcomeOddGroupMapping.QUERY_LOAD_ODD_GROUP_FOR_SCORE,
                 query = "SELECT new de.coiaf.footballprediction.backend.model.sharedcontext.OddGroupOutcome("
-                        + "m.oddHomeWin.impliedProbability, m.oddDraw.impliedProbability, m.oddAwayWin.impliedProbability"
+                        + "m.oddHomeWin.oddValue, m.oddDraw.oddValue, m.oddAwayWin.oddValue"
                         +") from OutcomeOddGroupMapping m "
                         + "WHERE m.expectedHomeGoals = :expectedHomeGoals "
                         + "and m.expectedAwayGoals = :expectedAwayGoals "),
