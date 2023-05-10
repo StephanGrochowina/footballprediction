@@ -5,7 +5,7 @@ import de.coiaf.random.probability.Probability;
 
 import java.math.BigDecimal;
 
-public class BudgetRateCalculatorKellyComplete extends AbstractBudgetRateCalculatorRespectingBetValue {
+class BudgetRateCalculatorKellyComplete extends AbstractBudgetRateCalculatorRespectingBetValue {
 
     BudgetRateCalculatorKellyComplete() {
         super();

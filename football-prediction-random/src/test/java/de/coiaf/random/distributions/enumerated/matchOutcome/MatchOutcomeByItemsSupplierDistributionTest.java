@@ -5,8 +5,6 @@ import de.coiaf.random.probability.Probability;
 import org.junit.Ignore;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
 /**
  * @author Stephan Grochowina <stephan.grochowina@web.de>
  */

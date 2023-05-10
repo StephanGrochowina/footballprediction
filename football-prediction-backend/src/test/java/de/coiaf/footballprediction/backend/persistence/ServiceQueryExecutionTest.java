@@ -33,19 +33,19 @@ public class ServiceQueryExecutionTest {
     private static final BiFunction<Integer, Integer, List<Integer>> PAGINATOR_RETURNING_FILLED_LIST = (pages, entriesPerPage) -> PAGINATOR_RESULT;
 
 
-    private EntityManager entityMangerMock;
+    private EntityManager entityManagerMock;
     private ServiceQueryExecution queryExecutor;
 
     @Before
     public void setUp() {
-        this.entityMangerMock = mock(EntityManager.class);
+        this.entityManagerMock = mock(EntityManager.class);
 
-        this.queryExecutor = FactoryServiceQueryExecution.createInstance(this.entityMangerMock);
+        this.queryExecutor = FactoryServiceQueryExecution.createInstance(this.entityManagerMock);
     }
 
     @After
     public void tearDown() {
-        this.entityMangerMock = null;
+        this.entityManagerMock = null;
         this.queryExecutor = null;
     }
 

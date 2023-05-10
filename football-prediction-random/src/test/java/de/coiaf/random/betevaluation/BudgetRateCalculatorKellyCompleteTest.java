@@ -94,5 +94,4 @@ public class BudgetRateCalculatorKellyCompleteTest {
         assertNotNull(budgetRate);
         assertTrue(Probability.isImpossible(budgetRate));
     }
-
 }

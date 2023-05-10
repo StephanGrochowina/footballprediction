@@ -7,6 +7,7 @@ import de.coiaf.random.distributions.enumerated.matchOutcome.Outcomes;
 import de.coiaf.random.odds.DecimalOdd;
 import de.coiaf.random.probability.Probability;
 
+import java.math.BigDecimal;
 import java.util.Objects;
 
 public class OddGroupOutcome {
@@ -59,14 +60,14 @@ public class OddGroupOutcome {
         return new OddGroupOutcome(oddHomeWin, oddDraw, oddAwayWin);
     }
 
-    public OddGroupOutcome(Probability probabilityHomeWin, Probability probabilityDraw, Probability probabilityAwayWin) {
-        Objects.requireNonNull(probabilityHomeWin, "Parameter probabilityHomeWin must not be null.");
-        Objects.requireNonNull(probabilityDraw, "Parameter probabilityDraw must not be null.");
-        Objects.requireNonNull(probabilityAwayWin, "Parameter probabilityAwayWin must not be null.");
+    public OddGroupOutcome(BigDecimal oddValueHomeWin, BigDecimal oddValueDraw, BigDecimal oddValueAwayWin) {
+        Objects.requireNonNull(oddValueHomeWin, "Parameter oddValueHomeWin must not be null.");
+        Objects.requireNonNull(oddValueDraw, "Parameter oddValueDraw must not be null.");
+        Objects.requireNonNull(oddValueAwayWin, "Parameter oddValueAwayWin must not be null.");
 
-        this.oddHomeWin = DecimalOdd.from(probabilityHomeWin);
-        this.oddDraw = DecimalOdd.from(probabilityDraw);
-        this.oddAwayWin = DecimalOdd.from(probabilityAwayWin);
+        this.oddHomeWin = DecimalOdd.from(oddValueHomeWin);
+        this.oddDraw = DecimalOdd.from(oddValueDraw);
+        this.oddAwayWin = DecimalOdd.from(oddValueAwayWin);
     }
 
     private OddGroupOutcome(DecimalOdd oddHomeWin, DecimalOdd oddDraw, DecimalOdd oddAwayWin) {

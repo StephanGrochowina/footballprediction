@@ -4,18 +4,16 @@ import java.util.function.Supplier;
 
 public class BetEvaluatorFactory {
 
-    private final BudgetRateCalculatorFactory budgetRateCalculatorFactory = new BudgetRateCalculatorFactory();
-
     public BetEvaluator createBetEvaluatorForKellyComplete() {
-        return this.createBetEvaluator(this.budgetRateCalculatorFactory.createBudgetRateCalculatorKellyComplete());
+        return this.createBetEvaluator(BudgetRateCalculatorBuilder.createKellyCompleteCalculatorBuilder().build());
     }
 
     public BetEvaluator createBetEvaluatorForSimpleBudgetRateCalculator() {
-        return this.createBetEvaluator(this.budgetRateCalculatorFactory.createSimpleBudgetRateCalculator());
+        return this.createBetEvaluator(BudgetRateCalculatorBuilder.createSimpleCalculatorBuilder().build());
     }
 
     public BetEvaluator createBetEvaluator(Supplier<BudgetRateCalculator> supplier) {
-        return this.createBetEvaluator(this.budgetRateCalculatorFactory.createBudgetRateCalculator(supplier));
+        return this.createBetEvaluator(BudgetRateCalculatorBuilder.createCalculatorBuilder(supplier).build());
     }
 
     public BetEvaluator createBetEvaluator(BudgetRateCalculator calculator) {
