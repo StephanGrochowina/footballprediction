@@ -5,9 +5,9 @@
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
         <!-- converters -->
-        <class>de.coiaf.footballprediction.backend.persistence.attributeconversion.AttributeConverterEstimatedGoals</class>
-        <class>de.coiaf.footballprediction.backend.persistence.attributeconversion.AttributeConverterLocalDate</class>
-        <class>de.coiaf.footballprediction.backend.persistence.attributeconversion.AttributeConverterProbability</class>
+        <class>de.coiaf.footballprediction.sharedkernal.infrastructure.jpa.attributeconversion.AttributeConverterEstimatedGoals</class>
+        <class>de.coiaf.footballprediction.sharedkernal.infrastructure.jpa.attributeconversion.AttributeConverterLocalDate</class>
+        <class>de.coiaf.footballprediction.sharedkernal.infrastructure.jpa.attributeconversion.AttributeConverterProbability</class>
         <class>de.coiaf.footballprediction.backend.persistence.attributeconversion.AttributeConverterThresholdTotalGoals</class>
 
         <!-- entities -->

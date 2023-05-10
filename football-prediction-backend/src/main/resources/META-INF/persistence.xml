@@ -4,6 +4,12 @@
         <!--<provider>org.hibernate.ejb.HibernatePersistence</provider>-->
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
         <jta-data-source>java:jboss/datasources/FootballPredictions</jta-data-source>
+
+        <!-- converters from shared kernal module -->
+        <class>de.coiaf.footballprediction.sharedkernal.infrastructure.jpa.attributeconversion.AttributeConverterEstimatedGoals</class>
+        <class>de.coiaf.footballprediction.sharedkernal.infrastructure.jpa.attributeconversion.AttributeConverterLocalDate</class>
+        <class>de.coiaf.footballprediction.sharedkernal.infrastructure.jpa.attributeconversion.AttributeConverterProbability</class>
+
         <exclude-unlisted-classes>false</exclude-unlisted-classes>
         <properties>
             <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"/>

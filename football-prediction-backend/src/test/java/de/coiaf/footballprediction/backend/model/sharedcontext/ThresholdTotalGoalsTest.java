@@ -6,6 +6,7 @@ import java.math.BigDecimal;
 
 import static org.junit.Assert.*;
 
+@Deprecated
 public class ThresholdTotalGoalsTest {
 
     private static final BigDecimal NEGATIVE_THRESHOLD_VALUE = new BigDecimal("-0.5");

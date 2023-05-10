@@ -1,7 +1,7 @@
 package de.coiaf.footballprediction.backend.model.probability.poisson;
 
-import de.coiaf.footballprediction.backend.model.sharedcontext.EstimatedGoals;
-import de.coiaf.footballprediction.backend.model.sharedcontext.EstimatedScore;
+import de.coiaf.footballprediction.sharedkernal.domain.model.prediction.EstimatedGoals;
+import de.coiaf.footballprediction.sharedkernal.domain.model.prediction.EstimatedScore;
 import de.coiaf.footballprediction.backend.model.sharedcontext.OddGroupTotalGoals;
 import de.coiaf.footballprediction.backend.model.sharedcontext.ThresholdTotalGoals;
 
@@ -24,15 +24,15 @@ public class PoissonProbabilityModelService {
     private PoissonTotalGoalsRepository totalGoalsRepository;
 
     /**
-     * Determines the total goals odd group for over/under bets depending on the {@code score}
+     * Determines the total goals odd group for over/under bets depending on the {@code prediction}
      * to be expected in a match and the default threshold {@link ThresholdTotalGoals#getDefaultInstance()}
      * defining what number of goals are considered to be part of the under and the over bet.
-     * @param score the estimated score
+     * @param score the estimated prediction
      * @return an {@link OddGroupTotalGoals} instance
-     * @throws NullPointerException if {@code score} is null
+     * @throws NullPointerException if {@code prediction} is null
      */
     public OddGroupTotalGoals determineTotalGoalsOdds(EstimatedScore score) {
-        Objects.requireNonNull(score, "Parameter score must not be null");
+        Objects.requireNonNull(score, "Parameter prediction must not be null");
 
         return this.determineTotalGoalsOdds(
                 () -> this.totalGoalsRepository.findOddGroup(score),
@@ -42,16 +42,16 @@ public class PoissonProbabilityModelService {
     }
 
     /**
-     * Determines the total goals odd group for over/under bets depending on the {@code score}
+     * Determines the total goals odd group for over/under bets depending on the {@code prediction}
      * to be expected in a match and the {@code threshold} defining what number of goals are considered to be
      * part of the under and the over bet.
-     * @param score the estimated score
+     * @param score the estimated prediction
      * @param threshold the threshold for over/under probabilities
      * @return an {@link OddGroupTotalGoals} instance
-     * @throws NullPointerException if {@code score} or {@code threshold} is null
+     * @throws NullPointerException if {@code prediction} or {@code threshold} is null
      */
     public OddGroupTotalGoals determineTotalGoalsOdds(EstimatedScore score, ThresholdTotalGoals threshold) {
-        Objects.requireNonNull(score, "Parameter score must not be null");
+        Objects.requireNonNull(score, "Parameter prediction must not be null");
         Objects.requireNonNull(threshold, "Parameter threshold must not be null");
 
         return this.determineTotalGoalsOdds(

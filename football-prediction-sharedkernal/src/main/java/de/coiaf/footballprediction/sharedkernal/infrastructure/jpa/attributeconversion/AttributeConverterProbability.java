@@ -1,4 +1,4 @@
-package de.coiaf.footballprediction.backend.persistence.attributeconversion;
+package de.coiaf.footballprediction.sharedkernal.infrastructure.jpa.attributeconversion;
 
 import de.coiaf.random.probability.Probabilities;
 import de.coiaf.random.probability.Probability;
