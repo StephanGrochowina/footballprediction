@@ -1,6 +1,6 @@
 package de.coiaf.footballprediction.sharedkernal.domain.model.prediction;
 
-import de.coiaf.footballprediction.sharedkernal.domain.model.buildingblocks.ValueObject;
+import de.coiaf.footballprediction.sharedkernal.domain.model.common.buildingblocks.ValueObject;
 
 import java.io.Serializable;
 import java.util.Objects;

@@ -6,10 +6,10 @@
         <jta-data-source>java:jboss/datasources/FpProbabilityModels</jta-data-source>
 
         <!-- converters from shared kernal module -->
-        <class>de.coiaf.footballprediction.sharedkernal.infrastructure.jpa.attributeconversion.AttributeConverterEstimatedGoals</class>
-        <!-- class>de.coiaf.footballprediction.sharedkernal.infrastructure.jpa.attributeconversion.AttributeConverterLocalDate</class -->
-        <class>de.coiaf.footballprediction.sharedkernal.infrastructure.jpa.attributeconversion.AttributeConverterProbability</class>
-        <class>de.coiaf.footballprediction.sharedkernal.infrastructure.jpa.attributeconversion.AttributeConverterUuid</class>
+        <class>de.coiaf.footballprediction.sharedkernal.infrastructure.persistence.attributeconversion.AttributeConverterEstimatedGoals</class>
+        <!-- class>de.coiaf.footballprediction.sharedkernal.infrastructure.persistence.attributeconversion.AttributeConverterLocalDate</class -->
+        <class>de.coiaf.footballprediction.sharedkernal.infrastructure.persistence.attributeconversion.AttributeConverterProbability</class>
+        <class>de.coiaf.footballprediction.sharedkernal.infrastructure.persistence.attributeconversion.AttributeConverterUuid</class>
 
         <exclude-unlisted-classes>false</exclude-unlisted-classes>
         <properties>

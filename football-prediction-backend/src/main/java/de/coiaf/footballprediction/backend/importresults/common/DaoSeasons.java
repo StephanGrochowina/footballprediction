@@ -3,7 +3,6 @@ package de.coiaf.footballprediction.backend.importresults.common;
 import de.coiaf.footballprediction.backend.importresults.entity.Division;
 import de.coiaf.footballprediction.backend.importresults.entity.MatchResult;
 import de.coiaf.footballprediction.backend.importresults.entity.Season;
-import de.coiaf.footballprediction.backend.persistence.ServiceQueryExecution;
 
 import javax.inject.Inject;
 import javax.persistence.TypedQuery;
@@ -16,8 +15,7 @@ public class DaoSeasons {
             "select s from Season s inner join s.division d where d.id = :divisionId and s.description = :seasonDescription";
 
     @Inject
-    @ResultImportsServiceQueryExecution
-    private ServiceQueryExecution queryExecutor;
+    private ResultImportsServiceQueryExecution queryExecutor;
 
     public ContextSeasonImport createContext(Division division, String seasonDescription) {
         Season determinedSeason = determineSeason(division, seasonDescription);

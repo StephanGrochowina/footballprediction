@@ -2,7 +2,6 @@ package de.coiaf.footballprediction.backend.model.probability.poisson;
 
 import de.coiaf.footballprediction.backend.model.probability.PredictionsServiceQueryExecution;
 import de.coiaf.footballprediction.backend.model.sharedcontext.OddGroupOutcome;
-import de.coiaf.footballprediction.backend.persistence.ServiceQueryExecution;
 import de.coiaf.footballprediction.sharedkernal.domain.model.prediction.EstimatedGoals;
 import de.coiaf.footballprediction.sharedkernal.domain.model.prediction.EstimatedScore;
 import de.coiaf.random.distributions.enumerated.EnumDistribution;
@@ -20,8 +19,7 @@ public class PoissonOutcomeRepository {
     private static final BigDecimal ODD_VALUE_RANGE = new BigDecimal("0.10");
 
     @Inject
-    @PredictionsServiceQueryExecution
-    private ServiceQueryExecution queryExecutor;
+    private PredictionsServiceQueryExecution queryExecutor;
 
     /**
      * Finds a {@link EnumDistribution} instance for the estimated prediction {@code prediction}.
@@ -167,7 +165,7 @@ public class PoissonOutcomeRepository {
         return result;
     }
 
-    void setQueryExecutor(ServiceQueryExecution queryExecutor) {
+    void setQueryExecutor(PredictionsServiceQueryExecution queryExecutor) {
         this.queryExecutor = queryExecutor;
     }
 }

@@ -1,15 +1,14 @@
 package de.coiaf.footballprediction.backend.model.probability.poisson;
 
+import de.coiaf.footballprediction.backend.model.probability.PredictionsServiceQueryExecution;
 import de.coiaf.footballprediction.backend.persistence.FactoryServiceQueryExecution;
-import de.coiaf.footballprediction.backend.persistence.ServiceQueryExecution;
+import de.coiaf.footballprediction.backend.persistence.AbstractServiceQueryExecution;
 import de.coiaf.footballprediction.testframework.AbstractJpaDbUnitSingleTestFileTestCase;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
 import javax.persistence.EntityManager;
-
-import static org.junit.Assert.*;
 
 public class PoissonOutcomeRepositoryTestIT extends AbstractJpaDbUnitSingleTestFileTestCase {
 
@@ -18,7 +17,7 @@ public class PoissonOutcomeRepositoryTestIT extends AbstractJpaDbUnitSingleTestF
     @Before
     public void setUpRepository() {
         EntityManager entityManager = this.getEntityManager();
-        ServiceQueryExecution queryExecutor = FactoryServiceQueryExecution.createInstance(entityManager);
+        PredictionsServiceQueryExecution queryExecutor = FactoryServiceQueryExecution.createInstance(entityManager, PredictionsServiceQueryExecution::new);
 
         this.repository = null;
     }

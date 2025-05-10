@@ -1,7 +1,6 @@
 package de.coiaf.footballprediction.backend.importresults.common;
 
 import de.coiaf.footballprediction.backend.importresults.entity.Division;
-import de.coiaf.footballprediction.backend.persistence.ServiceQueryExecution;
 
 import javax.inject.Inject;
 import java.util.List;
@@ -12,8 +11,7 @@ public class DaoDivisions {
             + "(d) from Division d order by d.countryName, d.divisionLevel, d.divisionName";
 
     @Inject
-    @ResultImportsServiceQueryExecution
-    private ServiceQueryExecution queryExecutor;
+    private ResultImportsServiceQueryExecution queryExecutor;
 
     public List<DivisionDisplayable> loadAllDivisions() {
         return this.queryExecutor.loadMultipleResultsByQuery(QUERY_LOAD_ALL_DIVISIONS, null, DivisionDisplayable.class);

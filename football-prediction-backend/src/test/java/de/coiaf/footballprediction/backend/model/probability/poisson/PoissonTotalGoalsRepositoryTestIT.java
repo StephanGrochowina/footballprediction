@@ -1,10 +1,10 @@
 package de.coiaf.footballprediction.backend.model.probability.poisson;
 
+import de.coiaf.footballprediction.backend.model.probability.PredictionsServiceQueryExecution;
 import de.coiaf.footballprediction.sharedkernal.domain.model.prediction.EstimatedGoals;
 import de.coiaf.footballprediction.backend.model.sharedcontext.OddGroupTotalGoals;
 import de.coiaf.footballprediction.backend.model.sharedcontext.ThresholdTotalGoals;
 import de.coiaf.footballprediction.backend.persistence.FactoryServiceQueryExecution;
-import de.coiaf.footballprediction.backend.persistence.ServiceQueryExecution;
 import de.coiaf.footballprediction.testframework.AbstractJpaDbUnitSingleTestFileTestCase;
 import de.coiaf.random.odds.DecimalOdd;
 import de.coiaf.random.probability.Probability;
@@ -53,7 +53,7 @@ public class PoissonTotalGoalsRepositoryTestIT extends AbstractJpaDbUnitSingleTe
     @Before
     public void setUpRepository() {
         EntityManager entityManager = this.getEntityManager();
-        ServiceQueryExecution queryExecutor = FactoryServiceQueryExecution.createInstance(entityManager);
+        PredictionsServiceQueryExecution queryExecutor = FactoryServiceQueryExecution.createInstance(entityManager, PredictionsServiceQueryExecution::new);
 
         this.repository = FactoryPoissonTotalGoalsRepository.createSpy(queryExecutor);
     }

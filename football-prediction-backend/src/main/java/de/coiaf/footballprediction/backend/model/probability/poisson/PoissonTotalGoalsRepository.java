@@ -3,7 +3,6 @@ package de.coiaf.footballprediction.backend.model.probability.poisson;
 import de.coiaf.footballprediction.backend.model.probability.PredictionsServiceQueryExecution;
 import de.coiaf.footballprediction.backend.model.sharedcontext.OddGroupTotalGoals;
 import de.coiaf.footballprediction.backend.model.sharedcontext.ThresholdTotalGoals;
-import de.coiaf.footballprediction.backend.persistence.ServiceQueryExecution;
 import de.coiaf.footballprediction.sharedkernal.domain.model.prediction.EstimatedGoals;
 import de.coiaf.footballprediction.sharedkernal.domain.model.prediction.EstimatedScore;
 
@@ -15,8 +14,7 @@ import java.util.Objects;
 public class PoissonTotalGoalsRepository {
 
     @Inject
-    @PredictionsServiceQueryExecution
-    private ServiceQueryExecution queryExecutor;
+    private PredictionsServiceQueryExecution queryExecutor;
 
     /**
      * Finds a {@link OddGroupTotalGoals} instance for the estimated prediction {@code prediction} and the
@@ -159,7 +157,7 @@ public class PoissonTotalGoalsRepository {
         return EstimatedGoals.valueOf(result, true);
     }
 
-    void setQueryExecutor(ServiceQueryExecution queryExecutor) {
+    void setQueryExecutor(PredictionsServiceQueryExecution queryExecutor) {
         this.queryExecutor = queryExecutor;
     }
 }

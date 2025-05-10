@@ -6,9 +6,11 @@ import de.coiaf.footballprediction.backend.importresults.common.ObserverResultIm
 import de.coiaf.footballprediction.backend.importresults.entity.Division;
 import de.coiaf.footballprediction.backend.importresults.singleseason.ImporterFootballDataCoUkFilePerSeason;
 
+import javax.ejb.Stateful;
 import javax.inject.Inject;
 import java.util.List;
 
+@Stateful
 public class ServiceResultImport {
 
     @Inject

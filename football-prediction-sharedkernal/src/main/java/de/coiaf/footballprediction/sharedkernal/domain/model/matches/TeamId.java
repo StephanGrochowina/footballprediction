@@ -1,6 +1,6 @@
 package de.coiaf.footballprediction.sharedkernal.domain.model.matches;
 
-import de.coiaf.footballprediction.sharedkernal.domain.model.buildingblocks.AbstractUuidIdentifier;
+import de.coiaf.footballprediction.sharedkernal.domain.model.common.buildingblocks.AbstractUuidIdentifier;
 
 import java.util.UUID;
 

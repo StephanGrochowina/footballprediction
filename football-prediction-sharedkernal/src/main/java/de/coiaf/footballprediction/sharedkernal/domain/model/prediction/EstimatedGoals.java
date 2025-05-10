@@ -1,7 +1,7 @@
 package de.coiaf.footballprediction.sharedkernal.domain.model.prediction;
 
 import de.coiaf.footballprediction.common.vo.numerical.AbstractBigDecimalBasedValueObject;
-import de.coiaf.footballprediction.sharedkernal.domain.model.buildingblocks.ValueObject;
+import de.coiaf.footballprediction.sharedkernal.domain.model.common.buildingblocks.ValueObject;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
