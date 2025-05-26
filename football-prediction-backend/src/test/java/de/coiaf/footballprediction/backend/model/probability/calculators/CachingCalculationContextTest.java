@@ -68,7 +68,7 @@ public class CachingCalculationContextTest {
         assertEquals(4, result.size());
     }
     @Test
-    @Ignore
+    //@Ignore
     public void createCache_finityCheck() {
         double expectedTotalGoalsValue = 40;
         EstimatedGoals expectedTotalGoals = EstimatedGoals.valueOf(expectedTotalGoalsValue);

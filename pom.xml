@@ -194,5 +194,6 @@
         <module>football-prediction-common</module>
         <module>football-prediction-bc-probabilitymodel</module>
         <module>football-prediction-sharedkernal</module>
+        <module>football-prediction-domains</module>
     </modules>
 </project>
