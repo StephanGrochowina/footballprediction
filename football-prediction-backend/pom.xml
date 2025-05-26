@@ -17,6 +17,11 @@
         <!-- Backend implementation -->
         <dependency>
             <groupId>${project.groupId}</groupId>
+            <artifactId>football-prediction-domains</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
             <artifactId>football-prediction-sharedkernal</artifactId>
             <version>${project.version}</version>
         </dependency>
