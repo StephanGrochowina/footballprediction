@@ -116,6 +116,7 @@ public class BetValueCalculator {
         return new BetValue(bookmakersOdd, modelProbability, valueThreshold);
     }
 
+    @Deprecated
     static class BetValue {
 
         private static BigDecimal calculateBetValue(Odd<?> bookmakersOdd, Probability modelProbability) {
