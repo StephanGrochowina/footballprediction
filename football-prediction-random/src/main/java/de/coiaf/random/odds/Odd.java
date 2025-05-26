@@ -3,12 +3,13 @@ package de.coiaf.random.odds;
 import de.coiaf.random.probability.Probability;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 
 /**
  *
  * @param <OV> the type of the odd value
  */
-public interface Odd<OV> {
+public interface Odd<OV> extends Comparable<Odd<?>> {
 
     /**
      * Returns the implied probability for this odd. This value is related to the decimal odd value by the formula
@@ -38,7 +39,12 @@ public interface Odd<OV> {
      * @return a {@link BigDecimal BigDecimal instance} of the decimal odd value rounded to scale 2
      */
     default BigDecimal getNormalizedDecimalOddValue() {
-        return this.getDecimalOddValue().setScale(2, BigDecimal.ROUND_HALF_UP);
+        return this.getDecimalOddValue().setScale(2, RoundingMode.HALF_UP);
+    }
+
+    @Override
+    default int compareTo(Odd<?> other) {
+        return this.getDecimalOddValue().compareTo(other.getDecimalOddValue());
     }
 
     /**
