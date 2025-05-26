@@ -4,6 +4,7 @@ import de.coiaf.footballprediction.common.vo.numerical.AbstractBigDecimalBasedVa
 
 import java.math.BigDecimal;
 import java.math.MathContext;
+import java.math.RoundingMode;
 import java.util.Objects;
 
 /**
@@ -16,7 +17,7 @@ public class Probability extends AbstractBigDecimalBasedValueObject<Probability>
 
     private static final BigDecimal VALUE_IMPOSSIBLE = BigDecimal.ZERO;
     private static final BigDecimal VALUE_CERTAIN = BigDecimal.ONE;
-    private static final BigDecimal VALUE_UNCERTAIN = VALUE_IMPOSSIBLE.add(VALUE_CERTAIN).divide(BigDecimal.valueOf(2), 1, BigDecimal.ROUND_HALF_UP);
+    private static final BigDecimal VALUE_UNCERTAIN = VALUE_IMPOSSIBLE.add(VALUE_CERTAIN).divide(BigDecimal.valueOf(2), 1, RoundingMode.HALF_UP);
 
     public static final Probability IMPOSSIBLE = new Probability(VALUE_IMPOSSIBLE);
     public static final Probability UNCERTAIN = new Probability(VALUE_UNCERTAIN);
@@ -67,7 +68,7 @@ public class Probability extends AbstractBigDecimalBasedValueObject<Probability>
         Objects.requireNonNull(dividend);
         Objects.requireNonNull(divisor);
 
-        return dividend.divide(divisor, DIVISION_SCALE, BigDecimal.ROUND_HALF_UP);
+        return dividend.divide(divisor, DIVISION_SCALE, RoundingMode.HALF_UP);
     }
 
     private static BigDecimal createInternalValue(Number probability) {
