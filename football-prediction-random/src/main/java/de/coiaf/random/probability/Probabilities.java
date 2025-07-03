@@ -1,8 +1,9 @@
 package de.coiaf.random.probability;
 
 import java.math.BigDecimal;
-import java.math.MathContext;
+import java.math.RoundingMode;
 import java.util.Objects;
+import java.util.concurrent.ThreadLocalRandom;
 
 /**
  * @author Stephan Grochowina <stephan.grochowina@web.de>
@@ -17,7 +18,7 @@ public class Probabilities {
             throw new IllegalArgumentException("Cannot invert probability 0");
         }
 
-        return BigDecimal.ONE.divide(probability.toBigDecimal(), Probability.DIVISION_SCALE, BigDecimal.ROUND_HALF_UP);
+        return BigDecimal.ONE.divide(probability.toBigDecimal(), Probability.DIVISION_SCALE, RoundingMode.HALF_UP);
     }
 
     public static Probability invertValue(BigDecimal value) {
@@ -27,7 +28,7 @@ public class Probabilities {
             throw new IllegalArgumentException("Values below 1 cannot be inverted");
         }
 
-        return isMaxInvertibleValue(value) ? Probability.IMPOSSIBLE : new Probability(BigDecimal.ONE.divide(value, Probability.DIVISION_SCALE, BigDecimal.ROUND_HALF_UP));
+        return isMaxInvertibleValue(value) ? Probability.IMPOSSIBLE : new Probability(BigDecimal.ONE.divide(value, Probability.DIVISION_SCALE, RoundingMode.HALF_UP));
     }
 
     public static boolean isMaxInvertibleValue(BigDecimal value) {
@@ -35,6 +36,12 @@ public class Probabilities {
     }
 
     public static BigDecimal toFullyScaledBigDecimal(Probability probability) {
-        return probability == null ? null : probability.toBigDecimal().setScale(Probability.DIVISION_SCALE, BigDecimal.ROUND_HALF_UP);
+        return probability == null ? null : probability.toBigDecimal().setScale(Probability.DIVISION_SCALE, RoundingMode.HALF_UP);
+    }
+
+    public static Probability createRandomProbability() {
+        double randomValue = ThreadLocalRandom.current().nextDouble();
+
+        return Probability.valueOf(randomValue);
     }
 }
