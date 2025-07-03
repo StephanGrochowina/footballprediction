@@ -7,3 +7,5 @@
 # Ignore project folders
 target/
 out/
+/football-prediction-domains/.mvn/jvm.config
+/football-prediction-domains/.mvn/maven.config
